@@ -1,0 +1,9 @@
+{
+  "prettier.tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "vetur.format.options.useTabs": false,
+  "vetur.format.options.tabSize": 2,
+  "javascript.updateImportsOnFileMove.enabled": "always"
+}
