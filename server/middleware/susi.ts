@@ -8,7 +8,7 @@ import {
   useCookie,
 } from 'h3';
 
-const API = 'http://localhost:3000';
+const API = 'https://susana-api.herokuapp.com';
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   console.log('server');
