@@ -46,10 +46,11 @@ const iceServers = {
     { urls: 'stun:stun1.l.google.com:19302' },
     { urls: 'stun:stun2.l.google.com:19302' },
     { urls: 'stun:stun3.l.google.com:19302' },
-    { urls: 'stun:stun4.l.google.com:19302' },s
+    { urls: 'stun:stun4.l.google.com:19302' },
     {
-      url: 'turn:susana-api.herokuapp.com:3478?transport=tcp',
-      username: 'karas123456789',
+      url: 'turn:numb.viagenie.ca',
+      credential: 'muazkh',
+      username: 'webrtc@live.com',
     },
   ],
 };
