@@ -29,7 +29,7 @@ import { useCamera } from '../services/cameraService';
 let localStream;
 let remoteStream;
 let isRoomCreator;
-let rtcPeerConnection;
+let rtcPeerConnection: RTCPeerConnection;
 let roomId;
 
 const { camera, cameras } = useCamera();
@@ -43,10 +43,10 @@ const mediaConstraints = {
 const iceServers = {
   iceServers: [
     { urls: 'stun:stun.l.google.com:19302' },
-    { urls: 'stun:stun1.l.google.com:19302' },
-    { urls: 'stun:stun2.l.google.com:19302' },
-    { urls: 'stun:stun3.l.google.com:19302' },
-    { urls: 'stun:stun4.l.google.com:19302' },
+    // { urls: 'stun:stun1.l.google.com:19302' },
+    // { urls: 'stun:stun2.l.google.com:19302' },
+    // { urls: 'stun:stun3.l.google.com:19302' },
+    // { urls: 'stun:stun4.l.google.com:19302' },
   ],
 };
 
@@ -138,7 +138,9 @@ socket.on('webrtc_offer', async (event) => {
       addLocalTracks(rtcPeerConnection);
       rtcPeerConnection.ontrack = setRemoteStream;
       rtcPeerConnection.onicecandidate = sendIceCandidate;
-      rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(event));
+      await rtcPeerConnection.setRemoteDescription(
+        new RTCSessionDescription(event),
+      );
       await createAnswer(rtcPeerConnection);
     }
   } catch (error) {
@@ -146,13 +148,15 @@ socket.on('webrtc_offer', async (event) => {
   }
 });
 
-socket.on('webrtc_answer', (event) => {
+socket.on('webrtc_answer', async (event) => {
   console.log('Socket event callback: webrtc_answer');
 
-  rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(event));
+  await rtcPeerConnection.setRemoteDescription(
+    new RTCSessionDescription(event),
+  );
 });
 
-socket.on('webrtc_ice_candidate', (event) => {
+socket.on('webrtc_ice_candidate', async (event) => {
   console.log('Socket event callback: webrtc_ice_candidate');
 
   if (rtcPeerConnection) {
@@ -163,7 +167,7 @@ socket.on('webrtc_ice_candidate', (event) => {
 
     console.log('---> rtc', rtcPeerConnection);
     console.log('---> candidate', candidate);
-    rtcPeerConnection.addIceCandidate(candidate);
+    await rtcPeerConnection.addIceCandidate(candidate);
   }
 });
 
