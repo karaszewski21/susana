@@ -14,7 +14,7 @@
 // import { useCamera } from '../services/cameraService';
 // const { data } = await useFetch('http://localhost:3000/');
 // const { camera, cameras } = useCamera();
-// const socket = io('http://localhost:3000/');
+// const socket = io('https://susana-api.herokuapp.com/');
 // const inputValue = ref('');
 // const mediaConstraints = {
 //   audio: true,
