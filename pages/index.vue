@@ -48,7 +48,7 @@ const iceServers = {
     { urls: 'stun:stun3.l.google.com:19302' },
     { urls: 'stun:stun4.l.google.com:19302' },
     {
-      url: 'turn:numb.viagenie.ca',
+      urls: 'turn:numb.viagenie.ca',
       credential: 'muazkh',
       username: 'webrtc@live.com',
     },
