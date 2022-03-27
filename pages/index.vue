@@ -28,7 +28,7 @@ import { useCamera } from '../services/cameraService';
 
 let localStream;
 let remoteStream;
-let isRoomCreator;
+let isRoomCreator = false;
 let rtcPeerConnection: RTCPeerConnection;
 let roomId;
 
@@ -42,11 +42,11 @@ const mediaConstraints = {
 };
 const iceServers = {
   iceServers: [
-    { urls: 'stun:stun.l.google.com:19302' },
-    { urls: 'stun:stun1.l.google.com:19302' },
-    { urls: 'stun:stun2.l.google.com:19302' },
-    { urls: 'stun:stun3.l.google.com:19302' },
-    { urls: 'stun:stun4.l.google.com:19302' },
+    // { urls: 'stun:stun.l.google.com:19302' },
+    // { urls: 'stun:stun1.l.google.com:19302' },
+    // { urls: 'stun:stun2.l.google.com:19302' },
+    // { urls: 'stun:stun3.l.google.com:19302' },
+    // { urls: 'stun:stun4.l.google.com:19302' },
     {
       urls: 'turn:192.158.29.39:3478?transport=udp',
       credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
