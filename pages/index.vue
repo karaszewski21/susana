@@ -41,7 +41,7 @@ const mediaConstraints = {
   video: { width: 1280, height: 720 },
 };
 const iceServers = {
- ///iceServers: [
+  iceServers: [
     // { urls: 'stun:stun.l.google.com:19302' },
     // { urls: 'stun:stun1.l.google.com:19302' },
     // { urls: 'stun:stun2.l.google.com:19302' },
@@ -52,13 +52,15 @@ const iceServers = {
     //   credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
     //   username: '28224511:1379330808',
     // },
+
     {
-    urls: 'stun:turn01.brie.fi:5349',
-  }, {
-    urls: 'turn:turn01.brie.fi:5349',
-    username: 'brie',
-    credential: 'fi',
-  }
+      urls: 'stun:turn01.brie.fi:5349',
+    },
+    {
+      urls: 'turn:turn01.brie.fi:5349',
+      username: 'brie',
+      credential: 'fi',
+    },
   ],
 };
 
