@@ -1,8 +1,11 @@
 <template>
   <div class="header">
-    <div class="header__logo">Logo</div>
-    <div>Menu</div>
-    <div>Login icon</div>
+    <div class="header__logo">
+      <span class="material-icons-outlined"> face </span>
+      logo
+    </div>
+    <span class="material-icons-outlined"> settings </span>
+    <span class="material-icons-outlined"> account_circle </span>
   </div>
 </template>
 <style scoped lang="scss">
