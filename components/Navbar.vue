@@ -1,12 +1,18 @@
 <template>
   <div class="navbar">
-    <NuxtLink to="/">home</NuxtLink>
-    <NuxtLink to="/contact">contact</NuxtLink>
-    <NuxtLink to="/about">about</NuxtLink>
+    <NuxtLink to="/">Home</NuxtLink>
+    <NuxtLink to="/contact">Contact</NuxtLink>
+    <NuxtLink to="/about">About</NuxtLink>
   </div>
 </template>
-<style scoped>
+<style scoped lang="scss">
 .navbar {
   display: flex;
+  justify-content: center;
+
+  a {
+    padding: 10px;
+    text-decoration: none;
+  }
 }
 </style>

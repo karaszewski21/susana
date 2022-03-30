@@ -1,5 +1,3 @@
-import { ref, onMounted, onUnmounted } from 'vue';
-
 type MediaDeviceKind = 'audioinput' | 'audiooutput' | 'videoinput';
 
 interface MediaDeviceInfo {
@@ -10,7 +8,15 @@ interface MediaDeviceInfo {
   toJSON(): any;
 }
 
-export function useCamera() {
+interface MediaDeviceInfo {
+  readonly deviceId: string;
+  readonly groupId: string;
+  readonly kind: MediaDeviceKind;
+  readonly label: string;
+  toJSON(): any;
+}
+
+export default function useCamera() {
   const camera = ref('');
   const cameras = ref<MediaDeviceInfo[]>([]);
 
